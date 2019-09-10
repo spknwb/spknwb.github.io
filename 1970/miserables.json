@@ -1,0 +1,23 @@
+{
+
+    "nodes":[
+
+        {"id": "1970", "group": 2},
+        {"id": "AAAAAAAA", "group": 2},
+        {"id": "BBBBBBBB", "group": 2},
+
+        {"id": "GGGGGGGG", "group": 2}
+
+    ], 
+
+    "links": [
+        
+    {"source": "1970", "target": "AAAAAAAA", "value": 2},
+    {"source": "1970", "target": "BBBBBBBB", "value": 2},
+    
+
+    {"source": "BBBBBBBB", "target": "GGGGGGGG", "value": 20}
+
+  ]
+}
+

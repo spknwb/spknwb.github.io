@@ -43,14 +43,14 @@ function preload() {
     sound_2 = loadSound("sou_nds/02.mp3");
     sound_3 = loadSound("sou_nds/03.mp3");
     sound_4 = loadSound("sou_nds/04.mp3");
-    /*
-        var poetry_readings = "sgw-poetry-readings_all.json"
-        get_readings = loadJSON(poetry_readings);
-    */
+
+/*
+    var poetry_readings = "sgw-poetry-readings_all.json"
+    get_readings = loadJSON(poetry_readings);
+*/
 
     var poetry_readings = "words_and_music.json"
     get_readings = loadJSON(poetry_readings);
-
 
 }
 
@@ -60,11 +60,11 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
 
     // Create an Audio input
-    mic = new p5.AudioIn();
+     mic = new p5.AudioIn();
 
     // start the Audio Input.
     // By default, it does not .connect() (to the computer speakers)
-    mic.start();
+     mic.start();
 }
 
 function draw() {
@@ -184,10 +184,9 @@ function al_purdy_0() {
     fill(0);
     noStroke();
 
-    text(get_readings[0].title, bx - 200, by);
-    /*
+    text(get_readings[0].title, bx - 13, by);
     text(get_readings[0].name, bx - 150, by + spaze);
-    */
+
     pop();
 
 }
@@ -242,7 +241,7 @@ function ginsberg_1() {
     ) {
 
         overBox = true;
-        window.open("1970.html");
+        window.open("1970");
     } else {
         overBox = false;
     }
@@ -253,10 +252,9 @@ function ginsberg_1() {
     fill(0);
     noStroke();
 
-    text(get_readings[1].title, bx1 - 200, by1);
-    /*
+    text(get_readings[1].title, bx1 - 13, by1);
     text(get_readings[1].name, bx1 - 150, by1 + spaze);
-    */
+
     pop();
 
 }
@@ -288,10 +286,10 @@ function hecht_2() {
     ) {
 
         overBox = true;
-        fill(255, 100, 3, random(255));
+        fill(255, 100, 3,  random(255));
         strokeWeight(random(48));
         stroke(
-            255, 100, 3, 170);
+            255, 100, 3,  170);
         sound_2.play();
         sound_2.playMode(playMode);
     } else {
@@ -311,7 +309,7 @@ function hecht_2() {
     ) {
 
         overBox = true;
-        window.open("1970.html");
+        window.open("1970");
     } else {
         overBox = false;
     }
@@ -322,10 +320,9 @@ function hecht_2() {
     fill(0);
     noStroke();
 
-    text(get_readings[5].title, bx2 - 200, by2);
-    /*
+    text(get_readings[5].title, bx2 - 13, by2);
     text(get_readings[5].name, bx2 - 150, by2 + spaze);
-    */
+
     pop();
 
 }
@@ -377,7 +374,7 @@ function schroeder_3() {
 
     ) {
         overBox = true;
-        window.open("1970.html");
+        window.open("1970");
     } else {
         overBox = false;
     }
@@ -387,10 +384,9 @@ function schroeder_3() {
     fill(0);
     noStroke();
 
-    text(get_readings[3].title, bx3 - 200, by3);
-    /*
+    text(get_readings[3].title, bx3 - 13, by3);
     text(get_readings[3].name, bx3 - 150, by3 + spaze);
-    */
+
     pop();
 
 }
@@ -443,7 +439,7 @@ function schroeder_4() {
 
     ) {
         overBox = true;
-        window.open("1970.html");
+        window.open("1970");
     } else {
         overBox = false;
     }
@@ -453,10 +449,9 @@ function schroeder_4() {
     fill(0);
     noStroke();
 
-    text(get_readings[4].title, bx4 - 200, by4);
-    /*
+    text(get_readings[4].title, bx4 - 13, by4);
     text(get_readings[4].name, bx4 - 150, by4 + spaze);
-    */
+
     pop();
 
 }
