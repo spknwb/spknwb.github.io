@@ -4,12 +4,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
-        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <script src="p5/sketch.js"></script>
-<!--    <script src="soeoe_oa.js" type="text/javascript"></script>-->
+    <div id="p5_loading">
+      <div class="spinner-border text-red" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <header>
+        <h1><span class="normal">The</span> WORDS <span class="normal">and</span> MUSIC SHOW</h1>
+        <h2>2000-2020</h2>
+        <p>Winston Churchill wrote: “Man will occasionally stumble over the truth, but most of the time he will pick himself up and continue on as though nothing has happened.” We humans, in searching for success and happiness, have several great loves. One is the love of discovering new things.</p>
+      </header>
+      <footer>
+        <h1>2000 -<br/>2020</h1>
+      </footer>      
+      <div id="page1" class="page"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+      function setHeaderTextWidth(){
+        windowWidth = $(window).width();
+        h1Width = $("header h1").width();
+        pWidth = windowWidth - h1Width - 40 - 100;
+        $("header p").css("width", pWidth + "px");
+        //$("header p").css("left", h1Width + 100 + "px");
+      }
+      
+      /*
+      $(window).resize(function(){
+        setHeaderTextWidth();
+      });
+      */
+    </script>
+    
   </body>
 </html>

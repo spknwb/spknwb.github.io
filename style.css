@@ -1,7 +1,49 @@
-html, body {
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: Futura;
+  src: url("inc/fonts/futura.otf");
 }
+
+@font-face {
+  font-family: Futura;
+  src: url("inc/fonts/futura_bold.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Futura;
+  src: url("inc/fonts/futura_light.otf");
+  font-weight: 100;
+}
+
+
+html, body {
+    font-family:Futura, arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background:#FFF9EE;
+}
+
 canvas {
   display: block;
+}
+
+.container-fluid { padding-right: 0px; padding-left: 0px; }
+
+header { position:relative; padding-top:60px; padding-left:40px; transition: all 1s; opacity:0; }
+header h1 { font-size:41px; color:#945043; font-weight:bold; line-height:100%; position:relative; /*-webkit-text-stroke: 1px #FFF9EE;*/ display:inline-block; }
+header h1 .normal { font-weight:100; font-style:italic; -webkit-text-stroke: 0px #FFF9EE; }
+header h2 { font-size:26px; color:#DE9042; font-weight:bold; line-height:100%; position:relative; top:0px; /*-webkit-text-stroke: 1px #FFF9EE;*/ }
+header p { position:absolute; right:60px; top:60px; width:200px; font-size:14px; padding-bottom:20px; }
+
+footer { position:absolute; left:40px; bottom:0px; transition: all 1s; opacity:0; }
+footer h1 { font-size:120px; color:#A2B1B1; font-weight:bold; opacity:0.43; display:inline-block; }
+
+.text-red { color:#945043; }
+
+.page { position:absolute; /*top:0px;*/ opacity:0; transition:1.25s; }
+
+#p5_loading { text-align:center; display:block; width:100%; top:50%; margin-top:-17px; margin-top:-75px; position:absolute; }
+
+@media (max-width: 1024px) {
+    header p { display:none; }
 }

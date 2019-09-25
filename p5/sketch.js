@@ -87,7 +87,8 @@ var yspeed = 0.5;
 let playMode = 'untilDone';
 
 function preload() {
-
+  futura = loadFont('inc/fonts/futura.otf');
+  futuraBold = loadFont('inc/fonts/futura_bold.otf');
     sound_0 = loadSound("sou_nds/20.mp3");
     sound_1 = loadSound("sou_nds/20.mp3");
     sound_2 = loadSound("sou_nds/20.mp3");
@@ -117,14 +118,27 @@ function preload() {
 
     var poetry_readings = "words_and_music.json"
     get_readings = loadJSON(poetry_readings);
+    
 
 }
 
 var contador = 1;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    background(255, 249, 255);
+  
+  $("header").css("opacity",1);
+  $(".page").css("opacity",1);
+  $("footer").css("opacity",1);
+  
+  setHeaderTextWidth();
+  var headerHeight = $("header").height()+68;
+  //var headerHeight = 0;
+  let cnv = createCanvas(windowWidth, windowHeight-headerHeight);
+  
+  cnv.parent('page1');
+  
+  //  createCanvas(windowWidth, windowHeight);
+    //background(255, 249, 255);
 
     // Create an Audio input
     mic = new p5.AudioIn();
@@ -136,15 +150,23 @@ function setup() {
     translate(150, 0)
 }
 
+function windowResized() {
+  var headerHeight = $("header").height()+68;
+  setHeaderTextWidth();
+  resizeCanvas(windowWidth, windowHeight-headerHeight);
+}
+
+
 function draw() {
 
-    background(255, 249, 238);
+    //background(255, 249, 238);
+    clear();
 
     contador++;
 
-    textFont("Futura");
+    textFont(futuraBold);
 
-    textSize(20);
+    textSize(14);
 
     fill(0);
 
@@ -306,7 +328,7 @@ function cero() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -388,7 +410,7 @@ function one() {
 
     ) {
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -471,7 +493,7 @@ function two() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -552,7 +574,7 @@ function three() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -636,7 +658,7 @@ function four() {
 
     ) {
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -718,7 +740,7 @@ function five() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -798,7 +820,7 @@ function six() {
 
     ) {
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -879,7 +901,7 @@ function seven() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -961,7 +983,7 @@ function eight() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -1039,7 +1061,7 @@ function nine() {
 
     ) {
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -1117,7 +1139,7 @@ function ten() {
 
     ) {
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -1205,7 +1227,7 @@ function eleven() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -1286,7 +1308,7 @@ function twelve() {
 
     ) {
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -1369,7 +1391,7 @@ function thirteen() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -1450,7 +1472,7 @@ function fourteen() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -1534,7 +1556,7 @@ function fifteen() {
 
     ) {
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -1616,7 +1638,7 @@ function sixteen() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -1696,7 +1718,7 @@ function seventeen() {
 
     ) {
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -1777,7 +1799,7 @@ function eighteen() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
@@ -1859,7 +1881,7 @@ function nineteen() {
     ) {
 
         overBox = true;
-        window.open("https://yecto.github.io/");
+        //window.open("https://yecto.github.io/");
     } else {
         overBox = false;
     }
