@@ -9,7 +9,7 @@ var avenida = 400;
 
 let hue = 0;
 var spaze = 23;
-let mic;
+//let mic;
 
 let overBox = false;
 let locked = false;
@@ -141,13 +141,13 @@ function setup() {
     //background(255, 249, 255);
 
     // Create an Audio input
-    mic = new p5.AudioIn();
+    // mic = new p5.AudioIn();
 
     // start the Audio Input.
     // By default, it does not .connect() (to the computer speakers)
-    mic.start();
+    //mic.start();
 
-    translate(150, 0)
+    //translate(150, 0)
 }
 
 function windowResized() {
@@ -263,7 +263,7 @@ function draw() {
 // year by function //
 //////////////////////
 
-
+// 2000
 function cero() {
 
     push();
@@ -291,7 +291,7 @@ function cero() {
 
     let mapeo_segundos = map(segundos, 0, 5000, 0, 200);
 
-    fill(217, 93, 70, 200);
+    fill(246, 166, 84, 200);
     noStroke();
 
     if (
@@ -305,10 +305,10 @@ function cero() {
 
         overBox = true;
         fill(
-            217, 93, 70, random(255));
+            246, 166, 84, random(255));
         strokeWeight(random(48));
         stroke(
-            217, 93, 70, 200);
+            246, 166, 84, 200);
         sound_0.play();
         sound_0.playMode(playMode);
     } else {
