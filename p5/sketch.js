@@ -5,7 +5,7 @@ var obj = {};
 
 var data;
 
-var avenida = 400;
+var avenida = 180;
 
 let hue = 0;
 var spaze = 23;
@@ -140,14 +140,6 @@ function setup() {
   //  createCanvas(windowWidth, windowHeight);
     //background(255, 249, 255);
 
-    // Create an Audio input
-    // mic = new p5.AudioIn();
-
-    // start the Audio Input.
-    // By default, it does not .connect() (to the computer speakers)
-    //mic.start();
-
-    //translate(150, 0)
 }
 
 function windowResized() {
@@ -270,11 +262,9 @@ function cero() {
 
     var ruidoX = 0.00007;
     bx = noise(millis() * ruidoX) * avenida;
-    // bx = noise(millis() * ruidoX) * windowWidth - 300;
 
     var ruidoY = 0.000025;
     by = noise(millis() * ruidoY) * avenida;
-    // by = noise(millis() * ruidoY) * windowHeight - 100;
 
     bx = bx + xspeed;
     by = by + yspeed;
@@ -287,6 +277,7 @@ function cero() {
         yspeed = yspeed * -1;
     }
 
+
     let segundos = get_readings[0].audio.duration.seconds;
 
     let mapeo_segundos = map(segundos, 0, 5000, 0, 200);
@@ -296,10 +287,10 @@ function cero() {
 
     if (
 
-        mouseX > bx - 90 &&
-        mouseX < bx + 90 &&
-        mouseY > by - 90 &&
-        mouseY < by + 90
+        mouseX > width/14+bx - 90 &&
+        mouseX < width/14+bx + 90 &&
+        mouseY > height/7+by - 90 &&
+        mouseY < height/7+by + 90
 
     ) {
 
@@ -320,10 +311,10 @@ function cero() {
 
     if (
 
-        mouseX > bx - 90 &&
-        mouseX < bx + 90 &&
-        mouseY > by - 90 &&
-        mouseY < by + 90 && mouseIsPressed
+        mouseX > width/14+bx - 90 &&
+        mouseX < width/14+bx + 90 &&
+        mouseY > height/7+by - 90 &&
+        mouseY < height/7+by + 90 && mouseIsPressed
 
     ) {
 
@@ -334,25 +325,23 @@ function cero() {
     }
 
 
-    ellipse(bx, by, mapeo_segundos, mapeo_segundos);
+    ellipse(width/19+bx, height/9+by, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
 
     noStroke();
 
-    text(get_readings[0].title, bx - 20, by + 10);
-    // text(get_readings[0].name, bx - 10, by + spaze);
+    text(get_readings[0].title, width/19+bx - 18, height/9+by + 10);
 
     pop();
 
 }
 
+// 2001
 
 function one() {
 
     push();
-
-    translate(200, 0);
 
     var ruidoX = -0.000031;
     bx1 = noise(millis() * ruidoX) * avenida;
@@ -382,10 +371,10 @@ function one() {
 
     if (
 
-        mouseX > bx1 + 200 - 90 &&
-        mouseX < bx1 + 200 + 90 &&
-        mouseY > by1 - 90 &&
-        mouseY < by1 + 90
+        mouseX > width/5+bx1 - 90 &&
+        mouseX < width/5+bx1 + 90 &&
+        mouseY > height/9+by1 - 90 &&
+        mouseY < height/9+by1 + 90
 
     ) {
 
@@ -403,10 +392,10 @@ function one() {
 
     if (
 
-        mouseX > bx1 + 200 - 90 &&
-        mouseX < bx1 + 200 + 90 &&
-        mouseY > by1 - 90 &&
-        mouseY < by1 + 90 && mouseIsPressed
+        mouseX > width/5+bx1 - 90 &&
+        mouseX < width/5+bx1 + 90 &&
+        mouseY > height/9+by1 - 90 &&
+        mouseY < height/9+by1 + 90 && mouseIsPressed
 
     ) {
         overBox = true;
@@ -415,26 +404,26 @@ function one() {
         overBox = false;
     }
 
-
-    ellipse(bx1, by1, mapeo_segundos, mapeo_segundos);
+    ellipse(width/5+bx1, height/9+by1, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[1].title, bx1 - 20, by1 + 10);
-    //text(get_readings[1].name, bx1 - 150, by1 + spaze);
+    text(get_readings[1].title, width/5+bx1 - 18, height/9+by1 + 10);
 
     pop();
 
 }
 
+// 2002
+
 function two() {
 
     push();
 
-    translate(300, 0);
+    //translate(300, 0);
 
-    var ruidoX = 0.00009;
+    var ruidoX = 0.000039;
     bx2 = noise(millis() * ruidoX) * avenida;
 
     var ruidoY = 0.000025;
@@ -462,10 +451,10 @@ function two() {
 
     if (
 
-        mouseX > bx2 + 300 - 90 &&
-        mouseX < bx2 + 300 + 90 &&
-        mouseY > by2 - 90 &&
-        mouseY < by2 + 90
+        mouseX > width/3+bx2 - 90 &&
+        mouseX < width/3+bx2 + 90 &&
+        mouseY > height/7+by2 - 90 &&
+        mouseY < height/7+by2 + 90
 
     ) {
 
@@ -485,10 +474,10 @@ function two() {
 
     if (
 
-        mouseX > bx2 + 300 - 90 &&
-        mouseX < bx2 + 300 + 90 &&
-        mouseY > by2 - 90 &&
-        mouseY < by2 + 90 && mouseIsPressed
+        mouseX > width/3+bx2 - 90 &&
+        mouseX < width/3+bx2 + 90 &&
+        mouseY > height/7+by2 - 90 &&
+        mouseY < height/7+by2 + 90 && mouseIsPressed
 
     ) {
 
@@ -498,29 +487,29 @@ function two() {
         overBox = false;
     }
 
-
-    ellipse(bx2, by2, mapeo_segundos, mapeo_segundos);
+    ellipse(width/3+bx2, height/7+by2, mapeo_segundos, mapeo_segundos);
 
     fill(244, 244, 246);
     noStroke();
 
-    text(get_readings[2].title, bx2 - 20, by2 + 10);
-    //text(get_readings[2].name, bx2 - 150, by2 + spaze);
+    text(get_readings[2].title, width/3+bx2 - 18, height/7+by2 + 10);
 
     pop();
 
 }
 
+// 2003
+
 function three() {
 
     push();
 
-    translate(70, 150);
+   // translate(70, 150);
 
-    var ruidoX = 0.000081;
+    var ruidoX = -0.000081;
     bx3 = noise(millis() * ruidoX) * avenida;
 
-    var ruidoY = 0.000051;
+    var ruidoY = -0.000091;
     by3 = noise(millis() * ruidoY) * avenida;
 
     bx3 = bx3 + xspeed;
@@ -538,23 +527,23 @@ function three() {
 
     let mapeo_segundos = map(segundos, 0, 5000, 0, 200);
 
-    fill(224, 224, 224, 200);
+    fill(217, 93, 70, 200);
     noStroke();
 
     if (
 
-        mouseX > bx3 + 70 - 90 &&
-        mouseX < bx3 + 70 + 90 &&
-        mouseY > by3 + 150 - 90 &&
-        mouseY < by3 + 150 + 90
+        mouseX > width/2+bx3 - 90 &&
+        mouseX < width/2+bx3 + 90 &&
+        mouseY > height/7+by3 - 90 &&
+        mouseY < height/7+by3 + 90
 
     ) {
 
         overBox = true;
-        fill(224, 224, 224, random(255));
+        fill(217, 93, 70, random(255));
         strokeWeight(random(48));
         stroke(
-            224, 224, 224, 200);
+            217, 93, 70, 200);
         sound_3.play();
         sound_3.playMode(playMode);
     } else {
@@ -566,10 +555,10 @@ function three() {
 
     if (
 
-        mouseX > bx3 + 70 - 90 &&
-        mouseX < bx3 + 70 + 90 &&
-        mouseY > by3 + 150 - 90 &&
-        mouseY < by3 + 150 + 90 && mouseIsPressed
+        mouseX > width/2+bx3 - 90 &&
+        mouseX < width/2+bx3 + 90 &&
+        mouseY > height/7+by3 - 90 &&
+        mouseY < height/7+by3 + 90 && mouseIsPressed
 
     ) {
 
@@ -579,36 +568,28 @@ function three() {
         overBox = false;
     }
 
-    ellipse(bx3, by3, mapeo_segundos, mapeo_segundos);
+    ellipse(width/2+bx3, height/7+by3, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[3].title, bx3 - 20, by3 + 10);
-    // text(get_readings[3].name, bx3 - 150, by3 + spaze);
+    text(get_readings[3].title, width/2+bx3 - 18, height/7+by3 + 10);
 
     pop();
 
 }
 
+//2004
+
 function four() {
 
     push();
 
-    translate(200, 200);
-
     var ruidoX = -0.000031;
     bx4 = noise(millis() * ruidoX) * avenida;
 
-    //    bx4 = noise(millis() * ruidoX) * width + 100 - 300;
-
     var ruidoY = -0.000051;
     by4 = noise(millis() * ruidoY) * avenida;
-
-    //    by4 = noise(millis() * ruidoY) * height + 400;
-
-    //print(by4);
-
 
     bx4 = bx4 + xspeed;
     by4 = by4 + yspeed;
@@ -621,7 +602,6 @@ function four() {
         yspeed = -5;
     }
 
-
     let segundos = get_readings[4].audio.duration.seconds;
 
     let mapeo_segundos = map(segundos, 0, 5000, 0, 200);
@@ -630,10 +610,10 @@ function four() {
 
     if (
 
-        mouseX > bx4 + 200 - 80 &&
-        mouseX < bx4 + 200 + 80 &&
-        mouseY > by4 + 200 - 80 &&
-        mouseY < by4 + 200 + 80
+        mouseX > width/1.45+bx4 - 80 &&
+        mouseX < width/1.45+bx4 + 80 &&
+        mouseY > height/7+by4 - 80 &&
+        mouseY < height/7+by4 + 80
 
     ) {
 
@@ -651,10 +631,10 @@ function four() {
 
     if (
 
-        mouseX > bx4 + 200 - 80 &&
-        mouseX < bx4 + 200 + 80 &&
-        mouseY > by4 + 200 - 80 &&
-        mouseY < by4 + 200 + 80 && mouseIsPressed
+        mouseX > width/1.45+bx4 - 80 &&
+        mouseX < width/1.45+bx4 + 80 &&
+        mouseY > height/7+by4 - 80 &&
+        mouseY < height/7+by4 + 80 && mouseIsPressed
 
     ) {
         overBox = true;
@@ -663,23 +643,22 @@ function four() {
         overBox = false;
     }
 
-    ellipse(bx4, by4, mapeo_segundos, mapeo_segundos);
+    ellipse(width/1.45+bx4, height/7+by4, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[4].title, bx4 - 20, by4 + 10);
-    // text(get_readings[4].name, bx4 - 150, by4 + spaze);
+    text(get_readings[4].title, width/1.45+bx4 - 20, height/7+by4 + 10);
 
     pop();
 
 }
 
+// 2005
+
 function five() {
 
     push();
-
-    translate(350, 200);
 
     var ruidoX = 0.00007;
     bx5 = noise(millis() * ruidoX) * avenida;
@@ -708,10 +687,10 @@ function five() {
 
     if (
 
-        mouseX > bx5 + 350 - 90 &&
-        mouseX < bx5 + 350 + 90 &&
-        mouseY > by5 + 200 - 90 &&
-        mouseY < by5 + 200 + 90
+        mouseX > width/1.2+bx5 - 90 &&
+        mouseX < width/1.2+bx5 + 90 &&
+        mouseY > height/7+by5  - 90 &&
+        mouseY < height/7+by5  + 90
 
     ) {
 
@@ -728,14 +707,14 @@ function five() {
         sound_5.stop();
     }
 
-    // mousePressed
+    // if - mousePressed
 
     if (
 
-        mouseX > bx5 + 350 - 90 &&
-        mouseX < bx5 + 250 + 90 &&
-        mouseY > by5 + 200 - 90 &&
-        mouseY < by5 + 200 + 90 && mouseIsPressed
+        mouseX > width/1.2+bx5 - 90 &&
+        mouseX < width/1.2+bx5 + 90 &&
+        mouseY > height/7+by5  - 90 &&
+        mouseY < height/7+by5  + 90 && mouseIsPressed
 
     ) {
 
@@ -746,29 +725,26 @@ function five() {
     }
 
 
-    ellipse(bx5, by5, mapeo_segundos, mapeo_segundos);
+    ellipse(width/1.2+bx5, height/7+by5, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
 
     noStroke();
 
-    text(get_readings[5].title, bx5 - 20, by5 + 10);
-    // text(get_readings[0].name, bx - 10, by + spaze);
+    text(get_readings[5].title, width/1.2+bx5 - 18, height/7+by5 + 10);
 
     pop();
 
 }
 
+// 2006
+
 function six() {
 
     push();
 
-    translate(0, 300);
-
     var ruidoX = -0.000081;
     bx6 = noise(millis() * ruidoX) * avenida;
-
-    // var bx1 = 120;
 
     var ruidoY = 0.0001;
     by6 = noise(millis() * ruidoY) * avenida;
@@ -792,10 +768,10 @@ function six() {
 
     if (
 
-        mouseX > bx6 - 90 &&
-        mouseX < bx6 + 90 &&
-        mouseY > by6 + 300 - 90 &&
-        mouseY < by6 + 300 + 90
+        mouseX > width/10+bx6 - 90 &&
+        mouseX < width/10+bx6 + 90 &&
+        mouseY > height/3+by6 - 90 &&
+        mouseY < height/3+by6 + 90
 
     ) {
 
@@ -813,10 +789,10 @@ function six() {
 
     if (
 
-        mouseX > bx6 - 90 &&
-        mouseX < bx6 + 90 &&
-        mouseY > by6 + 300 - 90 &&
-        mouseY < by6 + 300 + 90 && mouseIsPressed
+        mouseX > width/10+bx6 - 90 &&
+        mouseX < width/10+bx6 + 90 &&
+        mouseY > height/3+by6 - 90 &&
+        mouseY < height/3+by6 + 90 && mouseIsPressed
 
     ) {
         overBox = true;
@@ -825,23 +801,22 @@ function six() {
         overBox = false;
     }
 
-    ellipse(bx6, by6, mapeo_segundos, mapeo_segundos);
+    ellipse(width/10+bx6, height/3+by6, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[6].title, bx6 - 20, by6 + 10);
-    //text(get_readings[1].name, bx1 - 150, by1 + spaze);
+    text(get_readings[6].title, width/10+bx6 - 18, height/3+by6 + 10);
 
     pop();
 
 }
 
+// 2007
+
 function seven() {
 
     push();
-
-    translate(150, 400);
 
     var ruidoX = 0.000129;
     bx7 = noise(millis() * ruidoX) * avenida;
@@ -870,10 +845,10 @@ function seven() {
 
     if (
 
-        mouseX > bx7 + 150 - 90 &&
-        mouseX < bx7 + 150 + 90 &&
-        mouseY > by7 + 400 - 90 &&
-        mouseY < by7 + 400 + 90
+        mouseX > width/4+bx7 - 90 &&
+        mouseX < width/4+bx7 + 90 &&
+        mouseY > height/3+by7 - 90 &&
+        mouseY < height/3+by7 + 90
 
     ) {
 
@@ -893,10 +868,10 @@ function seven() {
 
     if (
 
-        mouseX > bx7 + 150 - 90 &&
-        mouseX < bx7 + 150 + 90 &&
-        mouseY > by7 + 400 - 90 &&
-        mouseY < by7 + 400 + 90 && mouseIsPressed
+        mouseX > width/4+bx7 - 90 &&
+        mouseX < width/4+bx7 + 90 &&
+        mouseY > height/3+by7 - 90 &&
+        mouseY < height/3+by7 + 90 && mouseIsPressed
 
     ) {
 
@@ -907,23 +882,22 @@ function seven() {
     }
 
 
-    ellipse(bx7, by7, mapeo_segundos, mapeo_segundos);
+    ellipse(width/4.3+bx7, height/3+by7, mapeo_segundos, mapeo_segundos);
 
     fill(244, 244, 246);
     noStroke();
 
-    text(get_readings[7].title, bx7 - 20, by7 + 10);
-    //text(get_readings[2].name, bx2 - 150, by2 + spaze);
+    text(get_readings[7].title, width/4.3+bx7 - 18, height/3+by7 + 10);
 
     pop();
 
 }
 
+// 2008
+
 function eight() {
 
     push();
-
-    translate(400, 350);
 
     var ruidoX = 0.000029;
     bx8 = noise(millis() * ruidoX) * avenida;
@@ -952,10 +926,10 @@ function eight() {
 
     if (
 
-        mouseX > bx8 + 400 - 90 &&
-        mouseX < bx8 + 400 + 90 &&
-        mouseY > by8 + 350 - 90 &&
-        mouseY < by8 + 350 + 90
+        mouseX > width/2.8+bx8 - 90 &&
+        mouseX < width/2.8+bx8 + 90 &&
+        mouseY > height/3.1+by8 - 90 &&
+        mouseY < height/3.1+by8 + 90
 
     ) {
 
@@ -975,10 +949,10 @@ function eight() {
 
     if (
 
-        mouseX > bx8 + 400 - 90 &&
-        mouseX < bx8 + 400 + 90 &&
-        mouseY > by8 + 350 - 90 &&
-        mouseY < by8 + 350 + 90 && mouseIsPressed
+        mouseX > width/2.8+bx8 - 90 &&
+        mouseX < width/2.8+bx8 + 90 &&
+        mouseY > height/3.1+by8 - 90 &&
+        mouseY < height/3.1+by8 + 90 && mouseIsPressed
 
     ) {
 
@@ -989,23 +963,22 @@ function eight() {
     }
 
 
-    ellipse(bx8, by8, mapeo_segundos, mapeo_segundos);
+    ellipse(width/2.8+bx8, height/3.1+by8, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[8].title, bx8 - 20, by8 + 10);
-    // text(get_readings[3].name, bx3 - 150, by3 + spaze);
+    text(get_readings[8].title, width/2.8+bx8 - 18, height/3.1+by8 + 10);
 
     pop();
 
 }
 
+// 2009
+
 function nine() {
 
     push();
-
-    translate(40, 500);
 
     var ruidoX = 0.0000429;
     bx9 = noise(millis() * ruidoX) * avenida;
@@ -1027,16 +1000,16 @@ function nine() {
 
     let segundos = get_readings[9].audio.duration.seconds;
 
-    let mapeo_segundos = map(segundos, 0, 4000, 0, 200);
+    let mapeo_segundos = map(segundos, 0, 5000, 0, 200);
     fill(255, 168, 81, 200);
     noStroke();
 
     if (
 
-        mouseX > bx9 + 40 - 90 &&
-        mouseX < bx9 + 40 + 90 &&
-        mouseY > by9 + 500 - 90 &&
-        mouseY < by9 + 500 + 90
+        mouseX > width/2.07+bx9 - 90 &&
+        mouseX < width/2.07+bx9 + 90 &&
+        mouseY > height/2.6+by9 - 90 &&
+        mouseY < height/2.6+by9 + 90
 
     ) {
 
@@ -1054,10 +1027,10 @@ function nine() {
 
     if (
 
-        mouseX > bx9 + 40 - 90 &&
-        mouseX < bx9 + 40 + 90 &&
-        mouseY > by9 + 500 - 90 &&
-        mouseY < by9 + 500 + 90 && mouseIsPressed
+        mouseX > width/2.07+bx9 - 90 &&
+        mouseX < width/2.07+bx9 + 90 &&
+        mouseY > height/2.6+by9 - 90 &&
+        mouseY < height/2.6+by9 + 90 && mouseIsPressed
 
     ) {
         overBox = true;
@@ -1066,12 +1039,12 @@ function nine() {
         overBox = false;
     }
 
-    ellipse(bx9, by9, mapeo_segundos, mapeo_segundos);
+    ellipse(width/2.07+bx9, height/2.6+by9, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[9].title, bx9 - 20, by9 + 10);
+    text(get_readings[9].title, width/2.07+bx9 - 18, height/2.6+by9 + 10);
     // text(get_readings[4].name, bx4 - 150, by4 + spaze);
 
     pop();
@@ -1079,11 +1052,11 @@ function nine() {
 }
 
 
+// 2010
+
 function ten() {
 
     push();
-
-    translate(300, 480);
 
     var ruidoX = 0.000029;
     bx10 = noise(millis() * ruidoX) * avenida;
@@ -1105,16 +1078,16 @@ function ten() {
 
     let segundos = get_readings[10].audio.duration.seconds;
 
-    let mapeo_segundos = map(segundos, 0, 4000, 0, 200);
+    let mapeo_segundos = map(segundos, 0, 4500, 0, 200);
     fill(224, 224, 224, 200);
     noStroke();
 
     if (
 
-        mouseX > bx10 + 300 - 90 &&
-        mouseX < bx10 + 300 + 90 &&
-        mouseY > by10 + 480 - 90 &&
-        mouseY < by10 + 480 + 90
+        mouseX > width/1.58+bx10 - 90 &&
+        mouseX < width/1.58+bx10 + 90 &&
+        mouseY > height/3.1+by10 - 90 &&
+        mouseY < height/3.1+by10 + 90 
 
     ) {
 
@@ -1132,10 +1105,10 @@ function ten() {
 
     if (
 
-        mouseX > bx10 + 300 - 90 &&
-        mouseX < bx10 + 300 + 90 &&
-        mouseY > by10 + 480 - 90 &&
-        mouseY < by10 + 480 + 90 && mouseIsPressed
+        mouseX > width/1.58+bx10 - 90 &&
+        mouseX < width/1.58+bx10 + 90 &&
+        mouseY > height/3.1+by10 - 90 &&
+        mouseY < height/3.1+by10 + 90 && mouseIsPressed
 
     ) {
         overBox = true;
@@ -1144,28 +1117,22 @@ function ten() {
         overBox = false;
     }
 
-    ellipse(bx10, by10, mapeo_segundos, mapeo_segundos);
+    ellipse(width/1.58+bx10, height/3.1+by10, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[10].title, bx10 - 20, by10 + 10);
-    // text(get_readings[4].name, bx4 - 150, by4 + spaze);
+    text(get_readings[10].title, width/1.58+bx10 - 18, height/3.1+by10 + 10);
 
     pop();
 
 }
 
-/////////////////////////////
-// second line of the grid //
-/////////////////////////////
-
+// 2011
 
 function eleven() {
 
     push();
-
-    translate(550, 0);
 
     var ruidoX = 0.00007;
     bx11 = noise(millis() * ruidoX) * avenida;
@@ -1190,24 +1157,24 @@ function eleven() {
 
     let mapeo_segundos = map(segundos, 0, 5000, 0, 200);
 
-    fill(224, 224, 224, 200);
+    fill(148, 80, 67, 200);
     noStroke();
 
     if (
 
-        mouseX > bx11 + 550 - 90 &&
-        mouseX < bx11 + 550 + 90 &&
-        mouseY > by11 - 90 &&
-        mouseY < by11 + 90
+        mouseX > width/1.25+bx11 - 90 &&
+        mouseX < width/1.25+bx11 + 90 &&
+        mouseY > height/2.6+by11 - 90 &&
+        mouseY < height/2.6+by11 + 90
 
     ) {
 
         overBox = true;
         fill(
-            224, 224, 224, random(255));
+            148, 80, 67, random(255));
         strokeWeight(random(48));
         stroke(
-            224, 224, 224, 200);
+            148, 80, 67, 200);
         sound_11.play();
         sound_11.playMode(playMode);
     } else {
@@ -1219,10 +1186,10 @@ function eleven() {
 
     if (
 
-        mouseX > bx11 + 550 - 90 &&
-        mouseX < bx11 + 550 + 90 &&
-        mouseY > by11 - 90 &&
-        mouseY < by11 + 90 && mouseIsPressed
+        mouseX > width/1.25+bx11 - 90 &&
+        mouseX < width/1.25+bx11 + 90 &&
+        mouseY > height/2.6+by11 - 90 &&
+        mouseY < height/2.6+by11 + 90 && mouseIsPressed
 
     ) {
 
@@ -1233,24 +1200,24 @@ function eleven() {
     }
 
 
-    ellipse(bx11, by11, mapeo_segundos, mapeo_segundos);
+    ellipse(width/1.25+bx11, height/2.6+by11, mapeo_segundos, mapeo_segundos);
 
-    fill(42, 45, 45);
+    fill(244, 244, 246);
 
     noStroke();
 
-    text(get_readings[11].title, bx11 - 20, by11 + 10);
+    text(get_readings[11].title, width/1.25+bx11 - 18, height/2.6+by11 + 10);
     // text(get_readings[0].name, bx - 10, by + spaze);
 
     pop();
 
 }
 
+// 2012
+
 function twelve() {
 
     push();
-
-    translate(700, 0);
 
     var ruidoX = -0.000031;
     bx12 = noise(millis() * ruidoX) * avenida;
@@ -1280,10 +1247,10 @@ function twelve() {
 
     if (
 
-        mouseX > bx12 + 700 - 90 &&
-        mouseX < bx12 + 700 + 90 &&
-        mouseY > by12 - 90 &&
-        mouseY < by12 + 90
+        mouseX > width/12+bx12 - 90 &&
+        mouseX < width/12+bx12 + 90 &&
+        mouseY > height/1.9+by12 - 90 &&
+        mouseY < height/1.9+by12 + 90
 
     ) {
 
@@ -1301,10 +1268,10 @@ function twelve() {
 
     if (
 
-        mouseX > bx12 + 700 - 90 &&
-        mouseX < bx12 + 700 + 90 &&
-        mouseY > by12 - 90 &&
-        mouseY < by12 + 90 && mouseIsPressed
+        mouseX > width/12+bx12 - 90 &&
+        mouseX < width/12+bx12 + 90 &&
+        mouseY > height/1.9+by12 - 90 &&
+        mouseY < height/1.9+by12 + 90 && mouseIsPressed
 
     ) {
         overBox = true;
@@ -1314,23 +1281,22 @@ function twelve() {
     }
 
 
-    ellipse(bx12, by12, mapeo_segundos, mapeo_segundos);
+    ellipse(width/12+bx12, height/1.9+by12, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[12].title, bx12 - 20, by12 + 10);
-    //text(get_readings[1].name, bx1 - 150, by1 + spaze);
+    text(get_readings[12].title, width/12+bx12 - 18, height/1.9+by12 + 10);
 
     pop();
 
 }
 
+// 2013
+
 function thirteen() {
 
     push();
-
-    translate(900, 0);
 
     var ruidoX = 0.00009;
     bx13 = noise(millis() * ruidoX) * avenida;
@@ -1360,10 +1326,10 @@ function thirteen() {
 
     if (
 
-        mouseX > bx13 + 900 - 90 &&
-        mouseX < bx13 + 900 + 90 &&
-        mouseY > by13 - 90 &&
-        mouseY < by13 + 90
+        mouseX > width/4+bx13 - 90 &&
+        mouseX < width/4+bx13 + 90 &&
+        mouseY > height/1.9+by13 - 90 &&
+        mouseY < height/1.9+by13 + 90
 
     ) {
 
@@ -1383,10 +1349,10 @@ function thirteen() {
 
     if (
 
-        mouseX > bx13 + 900 - 90 &&
-        mouseX < bx13 + 900 + 90 &&
-        mouseY > by13 - 90 &&
-        mouseY < by13 + 90 && mouseIsPressed
+        mouseX > width/4+bx13 - 90 &&
+        mouseX < width/4+bx13 + 90 &&
+        mouseY > height/1.9+by13 - 90 &&
+        mouseY < height/1.9+by13 + 90 && mouseIsPressed
 
     ) {
 
@@ -1397,23 +1363,22 @@ function thirteen() {
     }
 
 
-    ellipse(bx13, by13, mapeo_segundos, mapeo_segundos);
+    ellipse(width/4+bx13, height/1.9+by13, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[13].title, bx13 - 20, by13 + 10);
-    //text(get_readings[2].name, bx13 - 150, by13 + spaze);
+    text(get_readings[13].title, width/4+bx13 - 20, height/1.9+by13 + 10);
 
     pop();
 
 }
 
+// 2014
+
 function fourteen() {
 
     push();
-
-    translate(500, 150);
 
     var ruidoX = 0.000081;
     bx14 = noise(millis() * ruidoX) * avenida;
@@ -1441,10 +1406,10 @@ function fourteen() {
 
     if (
 
-        mouseX > bx14 + 500 - 90 &&
-        mouseX < bx14 + 500 + 90 &&
-        mouseY > by14 + 150 - 90 &&
-        mouseY < by14 + 150 + 90
+        mouseX > width/2.5+bx14 - 90 &&
+        mouseX < width/2.5+bx14 + 90 &&
+        mouseY > height/1.9+by14 - 90 &&
+        mouseY < height/1.9+by14 + 90
 
     ) {
 
@@ -1464,10 +1429,10 @@ function fourteen() {
 
     if (
 
-        mouseX > bx14 + 500 - 90 &&
-        mouseX < bx14 + 500 + 90 &&
-        mouseY > by14 + 150 - 90 &&
-        mouseY < by14 + 150 + 90 && mouseIsPressed
+        mouseX > width/2.5+bx14 - 90 &&
+        mouseX < width/2.5+bx14 + 90 &&
+        mouseY > height/1.9+by14 - 90 &&
+        mouseY < height/1.9+by14 + 90 && mouseIsPressed
 
     ) {
 
@@ -1477,23 +1442,22 @@ function fourteen() {
         overBox = false;
     }
 
-    ellipse(bx14, by14, mapeo_segundos, mapeo_segundos);
+    ellipse(width/2.5+bx14, height/1.9+by14, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[14].title, bx14 - 20, by14 + 10);
-    // text(get_readings[3].name, bx14 - 150, by14 + spaze);
+    text(get_readings[14].title, width/2.5+bx14 - 18, height/1.9+by14 + 10);
 
     pop();
 
 }
 
+// 2015
+
 function fifteen() {
 
     push();
-
-    translate(700, 200);
 
     var ruidoX = -0.000031;
     bx15 = noise(millis() * ruidoX) * avenida;
@@ -1528,10 +1492,10 @@ function fifteen() {
 
     if (
 
-        mouseX > bx15 + 700 - 80 &&
-        mouseX < bx15 + 700 + 80 &&
-        mouseY > by15 + 200 - 80 &&
-        mouseY < by15 + 200 + 80
+        mouseX > width/1.7+bx15 - 80 &&
+        mouseX < width/1.7+bx15 + 80 &&
+        mouseY > height/1.9+by15 - 80 &&
+        mouseY < height/1.9+by15 + 80
 
     ) {
 
@@ -1549,10 +1513,10 @@ function fifteen() {
 
     if (
 
-        mouseX > bx15 + 700 - 80 &&
-        mouseX < bx15 + 700 + 80 &&
-        mouseY > by15 + 200 - 80 &&
-        mouseY < by15 + 200 + 80 && mouseIsPressed
+        mouseX > width/1.7+bx15 - 80 &&
+        mouseX < width/1.7+bx15 + 80 &&
+        mouseY > height/1.9+by15 - 80 &&
+        mouseY < height/1.9+by15 + 80 && mouseIsPressed
 
     ) {
         overBox = true;
@@ -1561,23 +1525,22 @@ function fifteen() {
         overBox = false;
     }
 
-    ellipse(bx15, by15, mapeo_segundos, mapeo_segundos);
+    ellipse(width/1.7+bx15, height/1.9+by15, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[15].title, bx15 - 20, by15 + 10);
-    // text(get_readings[4].name, bx15 - 150, by15 + spaze);
+    text(get_readings[15].title, width/1.7+bx15 - 18, height/1.9+by15 + 10);
 
     pop();
 
 }
 
+// 2016
+
 function sixteen() {
 
     push();
-
-    translate(850, 200);
 
     var ruidoX = 0.00007;
     bx16 = noise(millis() * ruidoX) * avenida;
@@ -1601,24 +1564,24 @@ function sixteen() {
 
     let mapeo_segundos = map(segundos, 0, 5000, 0, 200);
 
-    fill(148, 80, 67, 200);
+    fill(255, 211, 134, 200);
     noStroke();
 
     if (
 
-        mouseX > bx16 + 850 - 90 &&
-        mouseX < bx16 + 850 + 90 &&
-        mouseY > by16 + 200 - 90 &&
-        mouseY < by16 + 200 + 90
+        mouseX > width/1.33+bx16 - 90 &&
+        mouseX < width/1.33+bx16 + 90 &&
+        mouseY > height/1.9+by16 - 90 &&
+        mouseY < height/1.9+by16 + 90
 
     ) {
 
         overBox = true;
         fill(
-            148, 80, 67, random(255));
+            255, 211, 134, random(255));
         strokeWeight(random(48));
         stroke(
-            148, 80, 67, 200);
+            255, 211, 134, 200);
         sound_16.play();
         sound_16.playMode(playMode);
     } else {
@@ -1630,10 +1593,10 @@ function sixteen() {
 
     if (
 
-        mouseX > bx16 + 850 - 90 &&
-        mouseX < bx16 + 850 + 90 &&
-        mouseY > by16 + 200 - 90 &&
-        mouseY < by16 + 200 + 90 && mouseIsPressed
+        mouseX > width/1.33+bx16 - 90 &&
+        mouseX < width/1.33+bx16 + 90 &&
+        mouseY > height/1.9+by16 - 90 &&
+        mouseY < height/1.9+by16 + 90 && mouseIsPressed
 
     ) {
 
@@ -1644,24 +1607,23 @@ function sixteen() {
     }
 
 
-    ellipse(bx16, by16, mapeo_segundos, mapeo_segundos);
+    ellipse(width/1.33+bx16, height/1.9+by16, mapeo_segundos, mapeo_segundos);
 
-    fill(244, 244, 246);
+    fill(42, 45, 45);
 
     noStroke();
 
-    text(get_readings[16].title, bx16 - 20, by16 + 10);
-    // text(get_readings[0].name, bx - 10, by + spaze);
+    text(get_readings[16].title, width/1.33+bx16 - 18, height/1.9+by16 + 10);
 
     pop();
 
 }
 
+// 2017
+
 function seventeen() {
 
     push();
-
-    translate(540, 300);
 
     var ruidoX = -0.000081;
     bx17 = noise(millis() * ruidoX) * avenida;
@@ -1690,10 +1652,10 @@ function seventeen() {
 
     if (
 
-        mouseX > bx17 + 540 - 90 &&
-        mouseX < bx17 + 540 + 90 &&
-        mouseY > by17 + 300 - 90 &&
-        mouseY < by17 + 300 + 90
+        mouseX > width/7+bx1 - 90 &&
+        mouseX < width/7+bx1 + 90 &&
+        mouseY > height/1.5+by17 - 90 &&
+        mouseY < height/1.5+by17 + 90
 
     ) {
 
@@ -1711,10 +1673,10 @@ function seventeen() {
 
     if (
 
-        mouseX > bx17 + 540 - 90 &&
-        mouseX < bx17 + 540 + 90 &&
-        mouseY > by17 + 300 - 90 &&
-        mouseY < by17 + 300 + 90 && mouseIsPressed
+        mouseX > width/7+bx1 - 90 &&
+        mouseX < width/7+bx1 + 90 &&
+        mouseY > height/1.5+by17 - 90 &&
+        mouseY < height/1.5+by17 + 90 && mouseIsPressed
 
     ) {
         overBox = true;
@@ -1723,23 +1685,22 @@ function seventeen() {
         overBox = false;
     }
 
-    ellipse(bx17, by17, mapeo_segundos, mapeo_segundos);
+    ellipse(width/7+bx17, height/1.5+by17, mapeo_segundos, mapeo_segundos);
 
     fill(244, 244, 246);
     noStroke();
 
-    text(get_readings[17].title, bx17 - 20, by17 + 10);
-    //text(get_readings[1].name, bx1 - 150, by1 + spaze);
+    text(get_readings[17].title, width/7+bx17 - 18, height/1.5+by17 + 10);
 
     pop();
 
 }
 
+// 2018
+
 function eighteen() {
 
     push();
-
-    translate(750, 400);
 
     var ruidoX = 0.000129;
     bx18 = noise(millis() * ruidoX) * avenida;
@@ -1768,10 +1729,10 @@ function eighteen() {
 
     if (
 
-        mouseX > bx18 + 750 - 90 &&
-        mouseX < bx18 + 750 + 90 &&
-        mouseY > by18 + 400 - 90 &&
-        mouseY < by18 + 400 + 90
+        mouseX > width/3.6+bx18 - 90 &&
+        mouseX < width/3.6+bx18 + 90 &&
+        mouseY > height/1.4+by18 - 90 &&
+        mouseY < height/1.4+by18 + 90
 
     ) {
 
@@ -1791,10 +1752,10 @@ function eighteen() {
 
     if (
 
-        mouseX > bx18 + 750 - 90 &&
-        mouseX < bx18 + 750 + 90 &&
-        mouseY > by18 + 400 - 90 &&
-        mouseY < by18 + 400 + 90 && mouseIsPressed
+        mouseX > width/3.6+bx18 - 90 &&
+        mouseX < width/3.6+bx18 + 90 &&
+        mouseY > height/1.4+by18 - 90 &&
+        mouseY < height/1.4+by18 + 90 && mouseIsPressed
 
     ) {
 
@@ -1805,23 +1766,22 @@ function eighteen() {
     }
 
 
-    ellipse(bx18, by18, mapeo_segundos, mapeo_segundos);
+    ellipse(width/3.6+bx18, height/1.4+by18, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[18].title, bx18 - 20, by18 + 10);
-    //text(get_readings[2].name, bx2 - 150, by2 + spaze);
+    text(get_readings[18].title, width/3.6+bx18 - 18, height/1.4+by18 + 10);
 
     pop();
 
 }
 
+// 2019
+
 function nineteen() {
 
     push();
-
-    translate(910, 350);
 
     var ruidoX = 0.000029;
     bx19 = noise(millis() * ruidoX) * avenida;
@@ -1850,10 +1810,10 @@ function nineteen() {
 
     if (
 
-        mouseX > bx19 + 910 - 90 &&
-        mouseX < bx19 + 910 + 90 &&
-        mouseY > by19 + 350 - 90 &&
-        mouseY < by19 + 350 + 90
+        mouseX > width/2+bx19 - 90 &&
+        mouseX < width/2+bx19 + 90 &&
+        mouseY > height/1.4+by19 - 90 &&
+        mouseY < height/1.4+by19 + 90
 
     ) {
 
@@ -1873,10 +1833,10 @@ function nineteen() {
 
     if (
 
-        mouseX > bx19 + 910 - 90 &&
-        mouseX < bx19 + 910 + 90 &&
-        mouseY > by19 + 350 - 90 &&
-        mouseY < by19 + 350 + 90 && mouseIsPressed
+        mouseX > width/2+bx19 - 90 &&
+        mouseX < width/2+bx19 + 90 &&
+        mouseY > height/1.4+by19 - 90 &&
+        mouseY < height/1.4+by19 + 90 && mouseIsPressed
 
     ) {
 
@@ -1887,24 +1847,22 @@ function nineteen() {
     }
 
 
-    ellipse(bx19, by19, mapeo_segundos, mapeo_segundos);
+    ellipse(width/2+bx19, height/1.4+by19, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[19].title, bx19 - 20, by19 + 10);
-    // text(get_readings[3].name, bx3 - 150, by3 + spaze);
+    text(get_readings[19].title, width/2+bx19 - 18, height/1.4+by19 + 10);
 
     pop();
 
 }
 
+// 2020
 
 function twenty() {
 
     push();
-
-    translate(540, 500);
 
     var ruidoX = 0.0000429;
     bx20 = noise(millis() * ruidoX) * avenida;
@@ -1931,11 +1889,11 @@ function twenty() {
     noStroke();
 
     if (
-
-        mouseX > bx20 + 540 - 90 &&
-        mouseX < bx20 + 540 + 90 &&
-        mouseY > by20 + 500 - 90 &&
-        mouseY < by20 + 500 + 90
+        
+        mouseX > width/1.5+bx20 - 90 &&
+        mouseX < width/1.5+bx20 + 90 &&
+        mouseY > height/1.4+by20 - 90 &&
+        mouseY < height/1.4+by20 + 90
 
     ) {
 
@@ -1953,10 +1911,10 @@ function twenty() {
 
     if (
 
-        mouseX > bx20 + 540 - 90 &&
-        mouseX < bx20 + 540 + 90 &&
-        mouseY > by20 + 500 - 90 &&
-        mouseY < by20 + 500 + 90 && mouseIsPressed
+        mouseX > width/1.5+bx20 - 90 &&
+        mouseX < width/1.5+bx20 + 90 &&
+        mouseY > height/1.4+by20 - 90 &&
+        mouseY < height/1.4+by20 + 90 && mouseIsPressed
 
     ) {
         overBox = true;
@@ -1965,13 +1923,12 @@ function twenty() {
         overBox = false;
     }
 
-    ellipse(bx20, by20, mapeo_segundos, mapeo_segundos);
+    ellipse(width/1.5+bx20, height/1.4+by20, mapeo_segundos, mapeo_segundos);
 
     fill(42, 45, 45);
     noStroke();
 
-    text(get_readings[20].title, bx20 - 20, by20 + 10);
-    // text(get_readings[4].name, bx4 - 150, by4 + spaze);
+    text(get_readings[20].title, width/1.5+bx20 - 18, height/1.4+by20 + 10);
 
     pop();
 
